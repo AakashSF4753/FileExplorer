@@ -1,4 +1,4 @@
-ej.treegrid.TreeGrid.Inject(ej.treegrid.DetailRow, ej.treegrid.Page, ej.treegrid.Filter, ej.treegrid.Toolbar, ej.treegrid.Edit, ej.treegrid.Sort, ej.treegrid.CommandColumn);
+ej.treegrid.TreeGrid.Inject(ej.treegrid.Page, ej.treegrid.Filter, ej.treegrid.Toolbar, ej.treegrid.Sort);
 let fileManagerData = [
   {
     id: 1,
@@ -192,6 +192,7 @@ var tree = new ej.treegrid.TreeGrid({
   childMapping: 'Children',
   treeColumnIndex: 2,
   allowSelection: true,
+  allowSorting: true,
   selectionSettings: { persistSelection: true },
   toolbar: ['Search'],
   height: 400,
