@@ -1,4 +1,4 @@
-ej.treegrid.TreeGrid.Inject(ej.treegrid.Page, ej.treegrid.Filter, ej.treegrid.Toolbar, ej.treegrid.Sort);
+ej.treegrid.TreeGrid.Inject(ej.treegrid.Page, ej.treegrid.Filter, ej.treegrid.Toolbar, ej.treegrid.Sort, ej.treegrid.Edit, ej.treegrid.ContextMenu, ej.treegrid.Resize);
 let fileManagerData = [
   {
     id: 1,
@@ -193,12 +193,23 @@ var tree = new ej.treegrid.TreeGrid({
   treeColumnIndex: 2,
   allowSelection: true,
   allowSorting: true,
-  selectionSettings: { persistSelection: true },
+  allowFiltering: true,
+  filterSettings: {
+    type: 'Menu',
+    hierarchyMode: 'Both',
+    mode: 'Immediate',
+  },
+  editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Row' },
   toolbar: ['Search'],
   height: 400,
   pageSettings: { pageSize: 10 },
   enableHover: true,
   enableStickyHeader: true,
+  contextMenuItems: [
+    'AutoFit', 'AutoFitAll', 'SortAscending', 'SortDescending',
+    'Edit', 'Delete', 'Save', 'Cancel', 'FirstPage', 'PrevPage',
+    'LastPage', 'NextPage', 'Indent', 'Outdent',
+  ],
   columns: [
     { type: 'checkbox', width: 50 },
     { field: 'id', headerText: 'ID', visible: false, isPrimaryKey: true },
