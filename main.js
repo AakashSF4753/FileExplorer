@@ -206,9 +206,7 @@ var tree = new ej.treegrid.TreeGrid({
   enableHover: true,
   enableStickyHeader: true,
   contextMenuItems: [
-    'AutoFit', 'AutoFitAll', 'SortAscending', 'SortDescending',
-    'Edit', 'Delete', 'Save', 'Cancel', 'FirstPage', 'PrevPage',
-    'LastPage', 'NextPage', 'Indent', 'Outdent',
+    'AutoFit', 'AutoFitAll', 'SortAscending', 'SortDescending', 'Edit', 'Delete', 'Save', 'Cancel',
   ],
   columns: [
     { type: 'checkbox', width: 50 },
