@@ -218,9 +218,9 @@ var tree = new ej.treegrid.TreeGrid({
       headerText: 'Name',
       width: 200,
       template: function (data) {
-        var isFolder = data.type.toLowerCase().includes('folder');
-        var icon = isFolder ? '📁' : '🗃️';
-        return "<span>" + icon + " " + data.name + "</span>";
+          var isFolder = data.type.toLowerCase().includes('folder');
+          var iconClass = isFolder ? 'e-folder' : 'e-file-document';
+          return "<span class=\"e-icons " + iconClass + "\" style=\"margin-right: 8px;\"></span>" + data.name;
       }
     },
     {
