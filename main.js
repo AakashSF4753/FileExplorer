@@ -228,10 +228,11 @@ var tree = new ej.treegrid.TreeGrid({
       width: 120,
       valueAccessor: function (field, data) {
         return data.size ? (data.size / 1024).toFixed(2) + ' KB' : '';
-      }
+      },
+      allowEditing: false
     },
-    { field: 'created', headerText: 'Created On', type: 'date', format: 'yMd', width: 120, textAlign: 'Right' },
-    { field: 'modified', headerText: 'Last Modified', type: 'date', format: 'yMd', width: 120, textAlign: 'Right' },
+    { field: 'created', headerText: 'Created On', type: 'date', format: 'yMd', width: 120, textAlign: 'Right', allowEditing: false },
+    { field: 'modified', headerText: 'Last Modified', type: 'date', format: 'yMd', width: 120, textAlign: 'Right', allowEditing: false },
   ],
 });
 tree.appendTo('#TreeGrid');
