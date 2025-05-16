@@ -210,10 +210,10 @@ var tree = new ej.treegrid.TreeGrid({
   ],
   contextMenuClick: (args) => {
     if (args.element.innerHTML == 'Rename') {
-      const rowIndex = treeGrid
+      const rowIndex = tree
         .getRows()
         .indexOf(args.rowInfo.row);
-      treeGrid.editCell(rowIndex, 'name');
+      tree.editCell(rowIndex, 'name');
     }
   },
   columns: [
