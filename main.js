@@ -199,15 +199,23 @@ var tree = new ej.treegrid.TreeGrid({
     hierarchyMode: 'Both',
     mode: 'Immediate',
   },
-  editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Row' },
+  editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Cell', allowEditOnDblClick: false },
   toolbar: ['Search'],
   height: 400,
   pageSettings: { pageSize: 10 },
   enableHover: true,
   enableStickyHeader: true,
   contextMenuItems: [
-    'AutoFit', 'AutoFitAll', 'SortAscending', 'SortDescending', 'Edit', 'Delete', 'Save', 'Cancel',
+    { text: 'Rename', target: '.e-content', id: 'Edit_record' },
   ],
+  contextMenuClick: (args) => {
+    if (args.element.innerHTML == 'Rename') {
+      const rowIndex = treeGrid
+        .getRows()
+        .indexOf(args.rowInfo.row);
+      treeGrid.editCell(rowIndex, 'name');
+    }
+  },
   columns: [
     { type: 'checkbox', width: 50 },
     { field: 'id', headerText: 'ID', visible: false, isPrimaryKey: true },
